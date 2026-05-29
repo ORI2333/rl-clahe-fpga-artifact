@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $patterns = @(
-  "ORI2333",
+  "PERSONAL_GITHUB_USERNAME",
   "C:\\Users",
   "F:\\EngineeringWarehouse",
   "D:\\Program Files",

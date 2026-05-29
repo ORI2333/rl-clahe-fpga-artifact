@@ -1,0 +1,1 @@
+Placeholder. Regenerate with scripts/make_manifest.ps1 before pushing.

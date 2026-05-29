@@ -1,0 +1,10 @@
+{
+  "mode": "wo_qat",
+  "tag": "o5_multihead_wo_qat",
+  "num_samples": 3000,
+  "val_MAE_abs": 0.47133558988571167,
+  "csv_path": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\distill_data.csv",
+  "weights": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\student_wo_qat.pt",
+  "norm_json": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\obs_norm_wo_qat.json",
+  "delta_cl_max": 2.0
+}

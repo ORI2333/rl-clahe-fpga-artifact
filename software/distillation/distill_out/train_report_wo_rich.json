@@ -1,0 +1,10 @@
+{
+  "mode": "wo_rich",
+  "tag": "o5_multihead_wo_rich",
+  "num_samples": 3000,
+  "val_MAE_abs": 0.3185757100582123,
+  "csv_path": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\distill_data_wo_rich.csv",
+  "weights": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\student_wo_rich.pt",
+  "norm_json": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\obs_norm_wo_rich.json",
+  "delta_cl_max": 2.0
+}

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Data and model artifacts that need explicit review before release
+*.pt
+*.pth
+*.pkl
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+data/
+datasets/
+Train/
+Test/
+train/
+test/
+
+# Vivado / FPGA generated state
+*.jou
+*.log
+*.str
+*.wdb
+*.bit
+*.dcp
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+.Xil/
+
+# Local/editor state
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
+
+# Privacy guard
+*.env
+secrets.*
+token*
+

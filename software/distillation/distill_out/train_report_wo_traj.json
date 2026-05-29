@@ -1,0 +1,10 @@
+{
+  "mode": "wo_traj",
+  "tag": "o5_multihead_wo_traj",
+  "num_samples": 6000,
+  "val_MAE_abs": 0.4560554623603821,
+  "csv_path": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\distill_data_wo_traj.csv",
+  "weights": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\student_wo_traj.pt",
+  "norm_json": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\obs_norm_wo_traj.json",
+  "delta_cl_max": 2.0
+}

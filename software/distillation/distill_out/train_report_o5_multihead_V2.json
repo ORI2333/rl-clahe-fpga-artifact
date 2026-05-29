@@ -1,0 +1,10 @@
+{
+  "mode": "full",
+  "tag": "o5_multihead",
+  "num_samples": 3000,
+  "val_MAE_abs": 0.46880581974983215,
+  "csv_path": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\distill_data.csv",
+  "weights": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\student_o5_multihead.pt",
+  "norm_json": "F:\\EngineeringWarehouse\\ISP\\RL\\4.SAC\\2.distillation\\distill_out\\obs_norm_o5_multihead.json",
+  "delta_cl_max": 2.0
+}

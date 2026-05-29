@@ -1,0 +1,17 @@
+name: tecs-clahe-artifact
+status: private-working-copy
+paper: Stall-Free Software--Hardware Co-Design for Perception-Driven CLAHE
+review_deadline: 2026-07-26
+intended_review_mode: anonymized supplementary artifact
+release_after_acceptance: true
+license_during_review: review-only
+public_license_candidates:
+  - GPL-3.0-only
+  - Apache-2.0
+  - CERN-OHL-S-2.0
+key_revision_items:
+  - R1-2 fixed CLAHE sweep and tail robustness
+  - R1-3 hardware power latency energy
+  - R2-2 power and energy across configurations
+  - R3 RTL/golden consistency and code availability
+

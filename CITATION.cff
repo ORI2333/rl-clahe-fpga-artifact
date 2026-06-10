@@ -1,9 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this artifact, please cite the associated TECS paper."
-title: "Review artifact for Stall-Free Software--Hardware Co-Design for Perception-Driven CLAHE"
+message: "If you use this artifact, please cite the associated paper and this repository."
+title: "RL-CLAHE FPGA Artifact"
 authors:
-  - family-names: "Anonymous"
-    given-names: "Authors"
-date-released: 2026-05-29
-version: 0.1.0-review
-
+  - family-names: "Yu"
+    given-names: "Zeqi"
+  - family-names: "Zhao"
+    given-names: "Heng"
+  - family-names: "Li"
+    given-names: "Zuhe"
+  - family-names: "Pan"
+    given-names: "Yushan"
+  - family-names: "Guo"
+    given-names: "Xinfei"
+date-released: 2026-06-11
+version: 0.2.0-public-artifact
+repository-code: "https://github.com/ORI2333/rl-clahe-fpga-artifact"
+license: "custom-source-available-research"
+keywords:
+  - CLAHE
+  - FPGA
+  - image enhancement
+  - reinforcement learning
+  - fixed-point inference

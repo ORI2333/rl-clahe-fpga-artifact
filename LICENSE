@@ -1,0 +1,65 @@
+RL-CLAHE FPGA Artifact Source-Available Research License
+
+Copyright (c) 2026 The Authors.
+
+This repository is made publicly viewable to support academic peer review,
+research reproducibility, and non-commercial evaluation of the associated
+paper, "Stall-Free Software--Hardware Co-Design for Perception-Driven CLAHE".
+
+1. Permitted Use
+
+You may download, inspect, run, and modify the code, scripts, configuration
+files, representative RTL, and derived result files in this repository for
+non-commercial academic research, teaching, peer review, and reproducibility
+evaluation.
+
+2. Attribution Requirement
+
+Any use of this repository, its code, RTL, scripts, results, figures, or
+derivative implementations in a publication, thesis, report, presentation,
+repository, benchmark, or product documentation must clearly cite the associated
+paper and this repository. You must preserve copyright notices, this license,
+and citation metadata.
+
+3. Prohibited Conduct
+
+You may not:
+
+- present this repository, its unpublished research results, or derivative work
+  based on it as your own original work;
+- remove citation, copyright, or license notices;
+- use the repository for commercial products, services, sublicensing, paid
+  consulting deliverables, or proprietary benchmarks without written permission
+  from the authors;
+- redistribute source datasets, raw videos, third-party media, or other material
+  not included in this repository;
+- use the repository in a way that violates the license terms of any third-party
+  dataset, model, library, FPGA IP, or media source.
+
+4. Redistribution
+
+You may share links to the original repository. Redistribution of modified
+copies is allowed only for non-commercial academic purposes and only if the
+modified copy preserves this license, the citation metadata, and a clear notice
+describing the modifications. Redistribution must not imply endorsement by the
+authors.
+
+5. Third-Party Materials
+
+This repository may contain derived metrics, derived diagnostic panels, and
+metadata associated with third-party public datasets or videos. The original
+third-party source files are not redistributed unless explicitly included.
+Users are responsible for complying with the terms of any third-party materials
+they obtain separately.
+
+6. No Warranty
+
+The artifact is provided "as is", without warranty of any kind, express or
+implied, including but not limited to warranties of merchantability, fitness for
+a particular purpose, and non-infringement. The authors are not liable for any
+claim, damages, or other liability arising from use of the artifact.
+
+7. Additional Permission
+
+For commercial use, relicensing, integration into proprietary systems, or use
+outside the scope above, contact the authors for written permission.

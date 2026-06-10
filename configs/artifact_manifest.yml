@@ -1,17 +1,17 @@
-name: tecs-clahe-artifact
-status: private-working-copy
+name: rl-clahe-fpga-artifact
+status: public-source-available-artifact
 paper: Stall-Free Software--Hardware Co-Design for Perception-Driven CLAHE
 review_deadline: 2026-07-26
-intended_review_mode: anonymized supplementary artifact
-release_after_acceptance: true
-license_during_review: review-only
-public_license_candidates:
-  - GPL-3.0-only
-  - Apache-2.0
-  - CERN-OHL-S-2.0
+intended_review_mode: supplementary engineering artifact
+paper_files_included: false
+source_datasets_included: false
+raw_videos_included: false
+license: custom-source-available-research
+repository: https://github.com/ORI2333/rl-clahe-fpga-artifact
 key_revision_items:
   - R1-2 fixed CLAHE sweep and tail robustness
+  - R1-2 real-video diagnostic panels for Japan and Norway clips
   - R1-3 hardware power latency energy
   - R2-2 power and energy across configurations
+  - R3-10 industrial texture diagnostic metrics without source-image redistribution
   - R3 RTL/golden consistency and code availability
-

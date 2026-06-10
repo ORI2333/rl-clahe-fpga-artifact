@@ -719,7 +719,7 @@ def main():
             row[f"{k}_std"]  = s.get("std",  np.nan)
         summary_std_rows.append(row)
 
-        # 重点输出 BRISQUE/NIQE 的尾部统计（审稿人最看重）
+        # 重点输出 BRISQUE/NIQE 的尾部统计，便于检查无参考质量指标的尾部风险。
         for k in ["Q_BRISQUE", "Q_NIQE"]:
             s = summarize_array(np.array(by_method[m][k], dtype=np.float64))
             tail_rows.append({

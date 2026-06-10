@@ -85,14 +85,14 @@ Some scripts require local datasets or checkpoints that are not bundled. See
 ### Fixed-Clip And Tail Robustness
 
 `results/metrics/` contains CSV files used to reproduce the test-set mean and
-tail-robustness summaries. These files support the revision discussion that the
-main benefit is deployable adaptive control and reduced tail risk, rather than
+tail-robustness summaries. These files support the interpretation that the main
+benefit is deployable adaptive control and reduced tail risk, rather than
 claiming a large mean-quality win on every scene.
 
 ### Video Diagnostic Supplement
 
 `results/video_diagnostics/` contains compact, derived comparison videos for
-the two real-video diagnostic clips discussed in the response letter:
+the two real-video diagnostic clips used for supplemental validation:
 
 - `japan_lighting_4way_30f_5s.mp4`: Input / Fixed CLAHE CL=2.0 / Rule Adaptive
   CLAHE / Proposed DT-QAT, 30 frames rendered as a 5-second comparison video.

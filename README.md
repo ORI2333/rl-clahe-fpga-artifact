@@ -98,7 +98,7 @@ Adaptive CLAHE / Proposed DT-QAT.
 
 #### Japan Lighting Change
 
-![Japan lighting diagnostic](results/video_diagnostics/japan_lighting_4way_30f_5s.gif)
+![Japan lighting diagnostic](https://obsidian-picturebed-1256135654.cos.ap-nanjing.myqcloud.com/obsidion/japan_lighting_4way_30f_5s.gif?imageSlim)
 
 - `japan_lighting_4way_30f_5s.mp4`: Input / Fixed CLAHE CL=2.0 / Rule Adaptive
   CLAHE / Proposed DT-QAT, 30 frames rendered as a 5-second comparison video.
@@ -107,7 +107,7 @@ Adaptive CLAHE / Proposed DT-QAT.
 
 #### Norway Fade-In
 
-![Norway fade-in diagnostic](results/video_diagnostics/norway_fadein_4way_30f_5s.gif)
+![Norway fade-in diagnostic](https://obsidian-picturebed-1256135654.cos.ap-nanjing.myqcloud.com/obsidion/norway_fadein_4way_30f_5s.gif?imageSlim)
 
 - `norway_fadein_4way_30f_5s.mp4`: the same four-column comparison for the
   Norway fade-in clip, 30 frames rendered as a 5-second comparison video.

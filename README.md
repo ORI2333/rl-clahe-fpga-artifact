@@ -52,8 +52,8 @@ Included:
 - `results/ablation/`: student and quantization ablation summaries.
 - `results/hardware_reports/`: Vivado report snapshots used as tool-estimate
   evidence.
-- `results/video_diagnostics/`: derived 5-second four-way comparison videos for
-  the two real-video diagnostic clips.
+- `results/video_diagnostics/`: derived 5-second four-way comparison videos and
+  GIF previews for the two real-video diagnostic clips.
 - `results/industrial_texture_diagnostic/`: derived industrial-texture metrics
   and a metric-only plot for high-texture/noise discussion.
 - `docs/`: reproducibility notes and hardware-validation notes.
@@ -91,13 +91,24 @@ claiming a large mean-quality win on every scene.
 
 ### Video Diagnostic Supplement
 
-`results/video_diagnostics/` contains compact, derived comparison videos for
-the two real-video diagnostic clips used for supplemental validation:
+`results/video_diagnostics/` contains compact, derived comparison videos and
+GIF previews for the two real-video diagnostic clips used for supplemental
+validation. Each panel is arranged as Input / Fixed CLAHE CL=2.0 / Rule
+Adaptive CLAHE / Proposed DT-QAT.
+
+#### Japan Lighting Change
+
+![Japan lighting diagnostic](results/video_diagnostics/japan_lighting_4way_30f_5s.gif)
 
 - `japan_lighting_4way_30f_5s.mp4`: Input / Fixed CLAHE CL=2.0 / Rule Adaptive
   CLAHE / Proposed DT-QAT, 30 frames rendered as a 5-second comparison video.
   Local source video used during revision:
   `https://www.youtube.com/watch?v=G5RpJwCJDqc`.
+
+#### Norway Fade-In
+
+![Norway fade-in diagnostic](results/video_diagnostics/norway_fadein_4way_30f_5s.gif)
+
 - `norway_fadein_4way_30f_5s.mp4`: the same four-column comparison for the
   Norway fade-in clip, 30 frames rendered as a 5-second comparison video.
   Local source video used during revision:

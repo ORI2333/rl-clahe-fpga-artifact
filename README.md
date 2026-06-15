@@ -145,13 +145,24 @@ The diagnostic should be read as limitation evidence:
 
 ![Industrial texture metric bars](results/industrial_texture_diagnostic/industrial_texture_metric_bars.png)
 
+### Mask-Aware MVTec Diagnostic
+
+`results/masked_mvtec_diagnostic/` contains a smaller but stronger diagnostic
+based on MVTec AD samples with pixel-level anomaly masks.
+It is the preferred evidence for reviewer-facing discussion of defect/background
+separability because it uses mask-aware metrics rather than only natural-scene
+or full-image texture proxies.
+
+![Masked MVTec representative panel](results/masked_mvtec_diagnostic/masked_representative_panel.png)
+
 ## Mapping To Review Comments
 
 - R1-2: fixed CLAHE sensitivity, scene-wise behavior, video diagnostics, and
   tail robustness.
 - R1-3 / R2-2: hardware resource, latency, power, and energy tool estimates.
 - R3-6 / R3-8: FPGA resource comparison and RTL/software consistency checks.
-- R3-10: high-texture industrial-scene limitation evidence.
+- R3-10: high-texture industrial-scene limitation evidence and mask-aware
+  MVTec follow-up.
 - R3-11: code/artifact availability.
 
 ## Engineering Status

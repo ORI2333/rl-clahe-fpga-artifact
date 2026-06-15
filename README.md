@@ -123,7 +123,9 @@ hardware-in-the-loop evaluation.
 `results/industrial_texture_diagnostic/` contains metric-only derived evidence
 for high-texture industrial scenes. The local diagnostic used a 72-image sample
 from six NEU steel-surface defect classes, but the source images are not
-redistributed here.
+redistributed here. The representative panel below is a derived visual
+diagnostic selected from that local sample, included to make the texture/noise
+amplification behavior easier to inspect.
 
 The diagnostic should be read as limitation evidence:
 
@@ -133,8 +135,13 @@ The diagnostic should be read as limitation evidence:
   baseline;
 - fixed CLAHE with CL=2.0 remains more conservative on this particular
   industrial sample;
+- stronger edge/high-frequency amplification is not interpreted as higher
+  industrial detection accuracy, because this diagnostic does not use defect
+  masks or detector-level validation;
 - therefore highly textured or noisy industrial surfaces are a boundary case
   for the current clip-limit-only controller.
+
+![Industrial texture representative panel](results/industrial_texture_diagnostic/industrial_representative_panel.png)
 
 ![Industrial texture metric bars](results/industrial_texture_diagnostic/industrial_texture_metric_bars.png)
 

@@ -1,7 +1,8 @@
 # Industrial Texture Diagnostic
 
-This directory contains derived metrics for the high-texture industrial-scene
-diagnostic used in the TECS revision response.
+This directory contains derived metrics and representative visual evidence for
+the high-texture industrial-scene diagnostic used in the TECS revision
+response.
 
 ## Source Boundary
 
@@ -11,7 +12,7 @@ NEU steel-surface defect images:
 `https://github.com/siddhartamukherjee/NEU-DET-Steel-Surface-Defect-Detection`
 
 The source industrial images are **not** redistributed in this repository. This
-directory only includes derived CSV summaries and a metric-only plot.
+directory only includes derived CSV summaries and derived visual panels.
 
 ## Files
 
@@ -19,6 +20,8 @@ directory only includes derived CSV summaries and a metric-only plot.
 - `method_summary_by_class.csv`: per-class averages for six defect classes.
 - `industrial_texture_metric_bars.png`: plot generated from summary metrics;
   it does not contain source images.
+- `industrial_representative_panel.png`: derived panel assembled from selected
+  local sample outputs for qualitative inspection.
 
 ## Key Interpretation
 
@@ -34,6 +37,9 @@ On the 72-image sample:
 - The proposed DT-QAT controller is less aggressive than the rule-based
   adaptive baseline, but still more aggressive than Fixed CLAHE `CL=2.0` on
   this out-of-distribution industrial sample.
+- Stronger edge/high-frequency amplification is not interpreted as higher
+  industrial detection accuracy, because this diagnostic does not use defect
+  masks or detector-level validation.
 
 This supports a conservative response to the reviewer: highly textured or noisy
 industrial surfaces remain a boundary case for the current clip-limit-only

@@ -44,7 +44,7 @@ associated paper and this repository.
 Included:
 
 - `software/`: evaluation, ablation, distillation-check, and fixed-point export
-  scripts.
+  scripts, including the mask-aware industrial diagnostic entry point.
 - `rtl/`: representative SystemVerilog modules for the fixed-point adaptive
   controller and supporting preprocessing blocks.
 - `scripts/`: small helper scripts used for reproducibility checks.
@@ -73,6 +73,7 @@ The stable software entry points are:
 
 ```bash
 python software/experiment/run_ablation_on_testset_V4.py
+python software/experiment/masked_industrial_compare.py --help
 python software/distillation/verify_student_5step_hw_like.py
 python software/distillation/export_student_q12_multihead_V2.py
 ```

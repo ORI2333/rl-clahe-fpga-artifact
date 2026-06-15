@@ -52,6 +52,8 @@ Included:
 - `results/ablation/`: student and quantization ablation summaries.
 - `results/hardware_reports/`: Vivado report snapshots used as tool-estimate
   evidence.
+- `results/revision_evidence/`: compact reviewer-response diagnostics for
+  action-space formulation and frame-level clip-limit smoothing.
 - `results/video_diagnostics/`: derived 5-second four-way comparison videos and
   GIF previews for the two real-video diagnostic clips.
 - `results/industrial_texture_diagnostic/`: derived industrial-texture metrics
@@ -119,6 +121,25 @@ The original large video files are not redistributed. The MP4 files are derived
 diagnostic panels for reviewer inspection, not a claim of board-level
 hardware-in-the-loop evaluation.
 
+### Revision Evidence: SAC Rationale And Frame Smoothing
+
+`results/revision_evidence/a25_algorithm_choice/` contains a lightweight
+action-space diagnostic based on saved SAC teacher trajectory labels. It is not
+a PPO/DQN/TD3 retraining benchmark. It quantifies why the clip-limit update is
+naturally treated as a bounded continuous action: a DQN-style 9-bin uniform
+action grid gives a p95 final-clip-limit discretization error of 0.6039, while
+65 bins are needed to reduce the p95 error to 0.0717.
+
+`results/revision_evidence/frame_smoothing/` contains the threshold-triggered
+inter-frame clip-limit smoothing diagnostic used to discuss rapid illumination
+changes. The RTL helper is included as
+`rtl/controller/rl_clip_limit_smoother.sv`. With the default threshold of 256
+histogram-count units and a per-frame step limit of 128, the smoother triggers
+on 2/30 frames for the Japan lighting-change clip and 5/30 frames for the
+Norway fade-in clip. This is an RTL/Python diagnostic and engineering
+mitigation; it is not board-level HIL evidence and does not claim instantaneous
+intra-frame adaptation.
+
 ### Industrial Texture Diagnostic
 
 `results/industrial_texture_diagnostic/` contains metric-only derived evidence
@@ -161,7 +182,10 @@ or full-image texture proxies.
 - R1-2: fixed CLAHE sensitivity, scene-wise behavior, video diagnostics, and
   tail robustness.
 - R1-3 / R2-2: hardware resource, latency, power, and energy tool estimates.
+- R3-2: SAC selection rationale and bounded continuous action-space diagnostic.
 - R3-6 / R3-8: FPGA resource comparison and RTL/software consistency checks.
+- R3-7: frame-level update limitation and threshold-triggered inter-frame
+  smoothing diagnostic.
 - R3-10: high-texture industrial-scene limitation evidence and mask-aware
   MVTec follow-up.
 - R3-11: code/artifact availability.

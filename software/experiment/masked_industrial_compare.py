@@ -42,11 +42,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parents[1]
-VIDEO_COMPARE_DIR = PROJECT_ROOT / "analysis" / "video_method_compare"
-WORKSPACE_ROOT = PROJECT_ROOT.parents[1]
 
-sys.path.insert(0, str(VIDEO_COMPARE_DIR))
-from compare_video_methods import (  # noqa: E402
+sys.path.insert(0, str(SCRIPT_DIR))
+from clahe_method_helpers import (  # noqa: E402
     FIXED_CL_BASE,
     STUDENT_NORM,
     STUDENT_WEIGHTS,
@@ -375,7 +373,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-per-defect", type=int, default=0)
     parser.add_argument("--max-items", type=int, default=0)
     parser.add_argument("--resize", default="", help="Optional WIDTHxHEIGHT resize.")
-    parser.add_argument("--skip-student", action="store_true")
+    parser.add_argument(
+        "--include-student",
+        action="store_true",
+        help="Also run the DT-QAT student policy. This requires local student weights that are not bundled with the public artifact.",
+    )
     parser.add_argument("--panel-count", type=int, default=8)
     return parser
 
@@ -448,7 +450,7 @@ def main() -> int:
     else:
         items = discover_pairs(args.pairs_csv.resolve(), args.max_items)
 
-    student = None if args.skip_student else MLP5(STUDENT_WEIGHTS, STUDENT_NORM)
+    student = MLP5(STUDENT_WEIGHTS, STUDENT_NORM) if args.include_student else None
     methods: OrderedDict[str, Callable[[np.ndarray], tuple[np.ndarray, float]]] = OrderedDict()
     methods["Input"] = lambda img: (img.copy(), float("nan"))
     methods["Fixed CLAHE (CL=2.0)"] = lambda img: (apply_clahe(img, FIXED_CL_BASE), FIXED_CL_BASE)

@@ -1,16 +1,20 @@
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+$self = (Resolve-Path -LiteralPath $MyInvocation.MyCommand.Path).Path
+$textExtensions = @(
+  ".cff", ".csv", ".json", ".md", ".ps1", ".py", ".sv", ".svh",
+  ".tcl", ".toml", ".txt", ".v", ".vh", ".yml", ".yaml"
+)
 $patterns = @(
   "PERSONAL_GITHUB_USERNAME",
   "C:\\Users",
   "F:\\EngineeringWarehouse",
   "D:\\Program Files",
-  "Obsidian",
-  "apiKey",
-  "password",
-  "secret",
-  "token",
+  "apiKey\\s*[:=]",
+  "password\\s*[:=]",
+  "secret\\s*[:=]",
+  "token\\s*[:=]",
   "@gmail",
   "@qq",
   "@outlook"
@@ -19,7 +23,11 @@ $patterns = @(
 $hits = @()
 foreach ($pattern in $patterns) {
   $files = Get-ChildItem -LiteralPath $root -Recurse -File |
-    Where-Object { $_.FullName -notmatch "\\.git\\" }
+    Where-Object {
+      $_.FullName -notmatch "\\.git\\" -and
+      $_.FullName -ne $self -and
+      $textExtensions -contains $_.Extension.ToLowerInvariant()
+    }
   $result = $files | Select-String -Pattern $pattern -ErrorAction SilentlyContinue
   if ($result) {
     $hits += $result

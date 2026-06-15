@@ -5,18 +5,16 @@ Mask-aware industrial defect diagnostic for the TECS revision.
 
 Typical commands from the repository root:
 
-PowerShell, MVTec AD layout:
-  & "E:\\Program Files\\Anaconda\\envs\\myenv312\\python.exe" `
-    ".\\project\\RL_CLAHE\\analysis\\masked_industrial_compare\\masked_industrial_compare.py" `
-    --mvtec-root ".\\project\\datasets\\mvtec_anomaly_detection" `
-    --categories carpet grid leather tile wood metal_nut hazelnut cable `
-    --output-root ".\\project\\RL_CLAHE\\analysis\\masked_industrial_compare\\out\\mvtec_subset"
+MVTec AD layout:
+  python software/experiment/masked_industrial_compare.py \
+    --mvtec-root /path/to/mvtec_anomaly_detection \
+    --categories carpet grid leather tile wood metal_nut hazelnut cable \
+    --output-root results/masked_mvtec_diagnostic/local_rerun
 
-PowerShell, custom CSV with image_path,mask_path,class,defect columns:
-  & "E:\\Program Files\\Anaconda\\envs\\myenv312\\python.exe" `
-    ".\\project\\RL_CLAHE\\analysis\\masked_industrial_compare\\masked_industrial_compare.py" `
-    --pairs-csv ".\\project\\datasets\\custom_masked_pairs.csv" `
-    --output-root ".\\project\\RL_CLAHE\\analysis\\masked_industrial_compare\\out\\custom_masked"
+Custom CSV with image_path,mask_path,class,defect columns:
+  python software/experiment/masked_industrial_compare.py \
+    --pairs-csv /path/to/custom_masked_pairs.csv \
+    --output-root results/masked_mvtec_diagnostic/custom_rerun
 
 Boundary:
   This is not a trained industrial detector. It uses ground-truth defect masks

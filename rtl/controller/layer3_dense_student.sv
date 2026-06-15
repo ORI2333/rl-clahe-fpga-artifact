@@ -22,7 +22,7 @@ module layer3_dense_student(
 
     // 换成自己的路径
     small_rom #(
-        .HEX_PATH("F:/EngineeringWarehouse/ISP/RL/4.SAC/FPGA/hex/l3_w.hex"),
+        .HEX_PATH("hex/l3_w.hex"),
         .DEPTH   (NIN)
     ) u_w (
         .clka  (clk),
@@ -31,7 +31,7 @@ module layer3_dense_student(
     );
 
     small_rom #(
-        .HEX_PATH  ("F:/EngineeringWarehouse/ISP/RL/4.SAC/FPGA/hex//l3_b.hex"),
+        .HEX_PATH  ("hex/l3_b.hex"),
         .DEPTH     (1),
         .ADDR_WIDTH(1)
     ) u_b (

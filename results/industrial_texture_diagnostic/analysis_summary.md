@@ -1,7 +1,7 @@
 # Industrial Texture / Surface-Defect Diagnostic
 
 ## Dataset
-- Local sample root: `F:\EngineeringWarehouse\SFSHCDPDCCLAHE\project\datasets\neu_det_steel_surface_sample`
+- Local sample root: not redistributed in this artifact; the local sample was reconstructed from the source listed below.
 - Source used for this local diagnostic: GitHub mirror of NEU-DET steel surface defect images, `siddhartamukherjee/NEU-DET-Steel-Surface-Defect-Detection`, `IMAGES/`.
 - Intended interpretation: supplemental diagnostic for highly textured industrial scenes; do not redistribute source images in the review artifact until license/source terms are finalized.
 - Images analyzed: 72
@@ -91,8 +91,8 @@
 | scratches | Proposed DT-QAT Student | 12 | 3.442 | 1.311 | 3.106 | 0.205 | 18.629 | 2.519 | 6.281 | 12.771 | 0.826 |
 
 ## Outputs
-- Detail CSV: `F:\EngineeringWarehouse\SFSHCDPDCCLAHE\project\RL_CLAHE\analysis\industrial_texture_compare\out\neu_det_sample_72_industrial_metrics\method_detail.csv`
-- Overall summary CSV: `F:\EngineeringWarehouse\SFSHCDPDCCLAHE\project\RL_CLAHE\analysis\industrial_texture_compare\out\neu_det_sample_72_industrial_metrics\method_summary_overall.csv`
-- By-class summary CSV: `F:\EngineeringWarehouse\SFSHCDPDCCLAHE\project\RL_CLAHE\analysis\industrial_texture_compare\out\neu_det_sample_72_industrial_metrics\method_summary_by_class.csv`
-- Visual panel: `F:\EngineeringWarehouse\SFSHCDPDCCLAHE\project\RL_CLAHE\analysis\industrial_texture_compare\out\neu_det_sample_72_industrial_metrics\contact_sheet_industrial_methods.png`
+- Detail CSV: `results/industrial_texture_diagnostic/method_detail.csv`
+- Overall summary CSV: `results/industrial_texture_diagnostic/method_summary_overall.csv`
+- By-class summary CSV: `results/industrial_texture_diagnostic/method_summary_by_class.csv`
+- Visual panel: `results/industrial_texture_diagnostic/industrial_representative_panel.png`
 - `frames/`: per-method grayscale output images.

@@ -14,7 +14,7 @@ module tanh_q12_lut (
 
     // ROM: 8193 x 16
     (* rom_style = "block" *) reg [15:0] lut [0:8192];
-    initial $readmemh("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V1.1/hex/tanh_q12.hex", lut);
+    initial $readmemh("hex/tanh_q12.hex", lut);
 
     always @(posedge clk) begin
         out_q12 <= lut[addr];

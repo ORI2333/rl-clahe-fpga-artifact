@@ -17,8 +17,8 @@ module neuron_layer_l1(
     localparam int P      = `P_WIDTH;                 // 64
     localparam int BATCHN = `DIM_L1 / `P_WIDTH; // 128 / 64 = 2
 
-    `include "F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/rtl/verilog_headers/layer1_weights.svh"
-    `include "F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/rtl/verilog_headers/layer1_biases.svh"
+    `include "verilog_headers/layer1_weights.svh"
+    `include "verilog_headers/layer1_biases.svh"
 
 typedef enum logic [1:0] {S_IDLE,S_COMP,S_LATCH,S_WRITE} st_t; // + S_LATCH
     st_t st;

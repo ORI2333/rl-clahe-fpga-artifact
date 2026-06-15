@@ -36,7 +36,7 @@ module neuron_layer_l2_student(
 
     // 根据自己的工程路径改这里
     rom_wide_hex #(
-        .HEX_PATH   ("F:/EngineeringWarehouse/ISP/RL/4.SAC/FPGA/hex/l2_w_b0.hex"),
+        .HEX_PATH   ("hex/l2_w_b0.hex"),
         .DEPTH      (NIN),
         .WIDTH      (P*16)
     ) u_w0 (
@@ -46,7 +46,7 @@ module neuron_layer_l2_student(
     );
 
     rom_wide_hex #(
-        .HEX_PATH   ("F:/EngineeringWarehouse/ISP/RL/4.SAC/FPGA/hex/l2_b_b0.hex"),
+        .HEX_PATH   ("hex/l2_b_b0.hex"),
         .DEPTH      (P),
         .WIDTH      (P*16),
         .ADDR_WIDTH ($clog2(P))

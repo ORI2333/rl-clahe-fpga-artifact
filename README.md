@@ -160,6 +160,9 @@ The diagnostic should be read as limitation evidence:
 - stronger edge/high-frequency amplification is not interpreted as higher
   industrial detection accuracy, because this diagnostic does not use defect
   masks or detector-level validation;
+- BRISQUE/NIQE are not used as the primary industrial criteria here because
+  they are natural-scene-statistics metrics and can be misleading on defect
+  inspection imagery;
 - therefore highly textured or noisy industrial surfaces are a boundary case
   for the current clip-limit-only controller.
 
@@ -174,6 +177,7 @@ based on MVTec AD samples with pixel-level anomaly masks.
 It is the preferred evidence for reviewer-facing discussion of defect/background
 separability because it uses mask-aware metrics rather than only natural-scene
 or full-image texture proxies.
+These values remain diagnostic proxies, not detector-level accuracy claims.
 
 ![Masked MVTec representative panel](results/masked_mvtec_diagnostic/masked_representative_panel.png)
 

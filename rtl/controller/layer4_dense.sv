@@ -19,10 +19,10 @@ module layer4_dense(
     logic signed [15:0]      w_data;
     logic signed [15:0]      b_data;
 
-    small_rom #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3_w.hex"), .DEPTH(NIN)) u_w(
+    small_rom #(.HEX_PATH("hex/l3_w.hex"), .DEPTH(NIN)) u_w(
         .clka(clk), .addra(cnt), .douta(w_data)
     );
-    small_rom #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3_b.hex"), .DEPTH(1), .ADDR_WIDTH(1)) u_b(
+    small_rom #(.HEX_PATH("hex/l3_b.hex"), .DEPTH(1), .ADDR_WIDTH(1)) u_b(
         .clka(clk), .addra(1'b0), .douta(b_data)
     );
 

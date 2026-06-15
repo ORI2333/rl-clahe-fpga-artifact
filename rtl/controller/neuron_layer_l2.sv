@@ -33,16 +33,16 @@ module neuron_layer_l2(
     logic [P*16-1:0] w_bus [BATCHN];
     logic [P*16-1:0] b_bus [BATCHN];
 
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_w_b0.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w0(.clka(clk), .addra(mac_q), .douta(w_bus[0]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_w_b1.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w1(.clka(clk), .addra(mac_q), .douta(w_bus[1]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_w_b2.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w2(.clka(clk), .addra(mac_q), .douta(w_bus[2]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_w_b3.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w3(.clka(clk), .addra(mac_q), .douta(w_bus[3]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_w_b0.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w0(.clka(clk), .addra(mac_q), .douta(w_bus[0]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_w_b1.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w1(.clka(clk), .addra(mac_q), .douta(w_bus[1]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_w_b2.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w2(.clka(clk), .addra(mac_q), .douta(w_bus[2]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_w_b3.hex"), .DEPTH(`DIM_L1), .WIDTH(P*16)) u_w3(.clka(clk), .addra(mac_q), .douta(w_bus[3]));
 
     // 偏置HEX按“每行64个偏置拼接且各行相同”的生成法：用 wr_q 做地址也可
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_b_b0.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b0(.clka(clk), .addra(wr_q), .douta(b_bus[0]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_b_b1.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b1(.clka(clk), .addra(wr_q), .douta(b_bus[1]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_b_b2.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b2(.clka(clk), .addra(wr_q), .douta(b_bus[2]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l2_b_b3.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b3(.clka(clk), .addra(wr_q), .douta(b_bus[3]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_b_b0.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b0(.clka(clk), .addra(wr_q), .douta(b_bus[0]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_b_b1.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b1(.clka(clk), .addra(wr_q), .douta(b_bus[1]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_b_b2.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b2(.clka(clk), .addra(wr_q), .douta(b_bus[2]));
+    rom_wide_hex #(.HEX_PATH("hex/l2_b_b3.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b3(.clka(clk), .addra(wr_q), .douta(b_bus[3]));
 
     wire [P*16-1:0] w_sel = w_bus[batch_q];
     wire [P*16-1:0] b_sel = b_bus[batch_q];

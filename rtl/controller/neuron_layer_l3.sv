@@ -32,11 +32,11 @@ module neuron_layer_l3h(
     logic [P*16-1:0] w_bus [BATCHN];
     logic [P*16-1:0] b_bus [BATCHN];
 
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3h_w_b0.hex"), .DEPTH(`DIM_L2), .WIDTH(P*16)) u_w0(.clka(clk), .addra(mac_q), .douta(w_bus[0]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3h_w_b1.hex"), .DEPTH(`DIM_L2), .WIDTH(P*16)) u_w1(.clka(clk), .addra(mac_q), .douta(w_bus[1]));
+    rom_wide_hex #(.HEX_PATH("hex/l3h_w_b0.hex"), .DEPTH(`DIM_L2), .WIDTH(P*16)) u_w0(.clka(clk), .addra(mac_q), .douta(w_bus[0]));
+    rom_wide_hex #(.HEX_PATH("hex/l3h_w_b1.hex"), .DEPTH(`DIM_L2), .WIDTH(P*16)) u_w1(.clka(clk), .addra(mac_q), .douta(w_bus[1]));
 
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3h_b_b0.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b0(.clka(clk), .addra(wr_q), .douta(b_bus[0]));
-    rom_wide_hex #(.HEX_PATH("F:/EngineeringWarehouse/ISP/RL/2.FPGA/MLP_V2.0/hex/l3h_b_b1.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b1(.clka(clk), .addra(wr_q), .douta(b_bus[1]));
+    rom_wide_hex #(.HEX_PATH("hex/l3h_b_b0.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b0(.clka(clk), .addra(wr_q), .douta(b_bus[0]));
+    rom_wide_hex #(.HEX_PATH("hex/l3h_b_b1.hex"), .DEPTH(P), .WIDTH(P*16), .ADDR_WIDTH($clog2(P))) u_b1(.clka(clk), .addra(wr_q), .douta(b_bus[1]));
 
     wire [P*16-1:0] w_sel = w_bus[batch_q];
     wire [P*16-1:0] b_sel = b_bus[batch_q];

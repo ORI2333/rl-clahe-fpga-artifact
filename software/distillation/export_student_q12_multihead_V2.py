@@ -26,6 +26,7 @@ export_student_q12_multihead_V2.py
 
 import os
 import json
+import sys
 import numpy as np
 import torch
 import torch.nn as nn
@@ -327,4 +328,13 @@ def main():
 
 
 if __name__ == "__main__":
+    if any(arg in ("-h", "--help") for arg in sys.argv[1:]):
+        print(
+            "usage: python software/distillation/export_student_q12_multihead_V2.py\n\n"
+            "Exports Q4.12 student weights, biases, and normalization constants.\n"
+            "Requires local files that are not bundled in the public artifact:\n"
+            f"  {STUDENT_WEIGHTS}\n"
+            f"  {STUDENT_NORM}\n"
+        )
+        raise SystemExit(0)
     main()

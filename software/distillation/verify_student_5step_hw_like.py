@@ -20,6 +20,7 @@ verify_student_5step_hw_like.py
 import os
 import json
 import math
+import sys
 import numpy as np
 import torch
 import torch.nn as nn
@@ -288,4 +289,13 @@ def main():
           "(float ≈", q12_to_float(final_cl_q12), ")")
 
 if __name__ == "__main__":
+    if any(arg in ("-h", "--help") for arg in sys.argv[1:]):
+        print(
+            "usage: python software/distillation/verify_student_5step_hw_like.py\n\n"
+            "Runs a 5-step Q4.12 HW-like student-controller check.\n"
+            "Requires local files that are not bundled in the public artifact:\n"
+            f"  {STUDENT_WEIGHTS}\n"
+            f"  {STUDENT_NORM}\n"
+        )
+        raise SystemExit(0)
     main()

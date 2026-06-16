@@ -71,17 +71,23 @@ Not included:
 
 ## Quick Start
 
-The stable software entry points are:
+The directly inspectable entry points are:
+
+```bash
+python software/experiment/masked_industrial_compare.py --help
+```
+
+The following scripts are included for traceability, but they require local
+CSV/checkpoint inputs that are not bundled in the public artifact:
 
 ```bash
 python software/experiment/run_ablation_on_testset_V4.py
-python software/experiment/masked_industrial_compare.py --help
 python software/distillation/verify_student_5step_hw_like.py
 python software/distillation/export_student_q12_multihead_V2.py
 ```
 
-Some scripts require local datasets or checkpoints that are not bundled. See
-`docs/reproducibility_plan.md` for the remaining setup checklist.
+See `docs/reproducibility_plan.md` for the remaining setup checklist and the
+expected local inputs.
 
 ## Evidence Overview
 
